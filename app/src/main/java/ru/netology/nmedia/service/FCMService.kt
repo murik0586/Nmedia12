@@ -32,9 +32,9 @@ class FCMService : FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
 
         message.data[action]?.let {
-            when (Action.valueOf(it)) {
-                Action.LIKE -> handleLike(gson.fromJson(message.data[content], Like::class.java))
-                Action.NEW_POST -> handlerNewPost(gson.fromJson(message.data[content], NewPost::class.java))
+            when (it) {
+                likeChannelId -> handleLike(gson.fromJson(message.data[content], Like::class.java))
+                newPostChannelId -> handlerNewPost(gson.fromJson(message.data[content], NewPost::class.java))
             }
         }
     }
@@ -103,10 +103,6 @@ class FCMService : FirebaseMessagingService() {
 
 }
 
-enum class Action {
-    LIKE,
-    NEW_POST,
-}
 
 data class Like(
     val userId: Long,

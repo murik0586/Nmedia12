@@ -30,7 +30,11 @@ class NewPostFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = NewPostFragmentBinding.inflate(inflater, container,false)
+        val binding = NewPostFragmentBinding.inflate(
+            inflater,
+            container,
+            false
+        )
 
         arguments?.textArg?.let(binding.editText::setText)
 
@@ -45,9 +49,14 @@ class NewPostFragment : Fragment() {
                 viewModel.changeContent(binding.editText.text.toString())
                 viewModel.save()
                 AndroidUtils.hideKeyboard(requireView())
-                findNavController().navigateUp()
+
                 }
             }
+
+        viewModel.postCreated.observe(viewLifecycleOwner) {
+            viewModel.loadPosts()
+            findNavController().navigateUp()
+        }
 
         binding.cancelButton.setOnClickListener{
             AndroidUtils.hideKeyboard(requireView())

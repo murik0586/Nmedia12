@@ -11,4 +11,7 @@
     <string name="error_empty_content">Пост не может быть пустым</string>
     <string name="edit_action">Редактировать пост</string>
     <string name="chooser_share_post">Поделиться постом</string>
+    <string name="empty_posts">no posts</string>
+    <string name="retry_loading">Retry</string>
+    <string name="error_loading">try again later</string>
 </resources>

@@ -136,31 +136,31 @@
         tools:text="10"
         app:icon="@drawable/ic_baseline_remove_red_eye_24" />
 
-    <FrameLayout
-        android:id="@+id/videoLayout"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        app:layout_constraintBottom_toTopOf="@id/likeShareButtons"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/videoTools"
-        android:visibility="gone"
-        android:clickable="true"
-        android:focusable="true">
+<!--    <FrameLayout-->
+<!--        android:id="@+id/videoLayout"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="250dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/likeShareButtons"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/videoTools"-->
+<!--        android:visibility="gone"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true">-->
 
-        <VideoView
-            android:id="@+id/videoView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"/>
+<!--        <VideoView-->
+<!--            android:id="@+id/videoView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@android:color/transparent"/>-->
 
-        <ImageView
-            android:id="@+id/videoImage"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_baseline_play_arrow_24"
-            app:tint="@color/colorAccent"
-            android:layout_gravity="center"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/videoImage"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:src="@drawable/ic_baseline_play_arrow_24"-->
+<!--            app:tint="@color/colorAccent"-->
+<!--            android:layout_gravity="center"/>-->
 
-    </FrameLayout>
+<!--    </FrameLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

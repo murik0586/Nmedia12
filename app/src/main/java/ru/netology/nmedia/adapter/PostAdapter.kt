@@ -53,22 +53,7 @@ class PostViewHolder(
             imgbWatch.text = WallService.displayCount(post.watches)
             imgbLiked.isChecked = post.likedByMe
             imgbShare.isChecked = post.sharedByMe
-            videoView.setVideoURI(Uri.parse(post.videoUrl))
 
-            if (post.videoUrl.isNotEmpty()) {
-                videoLayout.visibility = View.VISIBLE
-
-                videoView.apply {
-                   requestFocus()
-                   start()
-                }
-                } else {
-                    videoLayout.visibility = View.GONE
-                }
-
-                videoLayout.setOnClickListener {
-                    onInteractionListener.onPlayVideo(post)
-                }
 
 
                 imgbLiked.setOnClickListener {
