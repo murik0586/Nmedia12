@@ -26,6 +26,20 @@ interface PostDao {
     )
     fun likeById(id: Long)
 
+    @Query("""
+                UPDATE PostEntity SET
+                    shares = shares + CASE WHEN sharedByMe THEN -1 ELSE 1 END,
+                    sharedByMe = CASE WHEN sharedByMe THEN 0 ELSE 1 END
+                WHERE id = :id
+            """)
+    fun shareById(id: Long)
+
+    @Query("""
+                UPDATE PostEntity SET
+                    watches = watches + 1
+                WHERE id = :id
+            """)
+    fun watchById(id: Long)
 
 
     fun save(post: PostEntity) =

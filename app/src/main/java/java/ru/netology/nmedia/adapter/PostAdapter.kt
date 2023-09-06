@@ -49,8 +49,10 @@ class PostViewHolder(
             published.text = post.published
             content.text = post.content
             imgbLiked.text = WallService.displayCount(post.likes)
+            imgbShare.text = WallService.displayCount(post.shares)
+            imgbWatch.text = WallService.displayCount(post.watches)
             imgbLiked.isChecked = post.likedByMe
-
+            imgbShare.isChecked = post.sharedByMe
 
 
 
@@ -58,6 +60,13 @@ class PostViewHolder(
                     onInteractionListener.onLike(post)
                 }
 
+                imgbShare.setOnClickListener {
+                    onInteractionListener.onShare(post)
+                }
+
+                imgbWatch.setOnClickListener {
+                    onInteractionListener.onWatch(post)
+                }
 
 
 
