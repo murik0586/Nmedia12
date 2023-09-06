@@ -31,19 +31,18 @@ class PostRepositoryImpl : PostRepository {
 
         client.newCall(request)
             .enqueue(object : Callback {
-                override fun onFailure(call: Call, e: IOException) {
-                    callback.onError(e)
-                }
-
                 override fun onResponse(call: Call, response: Response) {
-                    val body = response.body?.toString() ?: throw RuntimeException("body is null")
+                    val body = response.body?.string() ?: throw RuntimeException("body is null")
                     try {
                         callback.onSuccess(gson.fromJson(body, typeToken.type))
-                    } catch (e : Exception) {
+                    } catch (e: Exception) {
                         callback.onError(e)
                     }
                 }
 
+                override fun onFailure(call: Call, e: IOException) {
+                    callback.onError(e)
+                }
             })
     }
 
