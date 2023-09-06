@@ -88,7 +88,7 @@
 
 
     <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/likeButtonBarrier"
+        android:id="@+id/likeShareButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
@@ -105,11 +105,36 @@
         android:checkable="true"
         app:icon="@drawable/ic_like_selector"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/likeButtonBarrier"
+        app:layout_constraintTop_toBottomOf="@id/likeShareButtons"
         tools:text="@sample/posts.json/data/likes" />
 
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/imgbShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checkable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbLiked"
+        app:layout_constraintStart_toEndOf="@+id/imgbLiked"
+        app:layout_constraintTop_toBottomOf="@+id/likeShareButtons"
+        app:icon="@drawable/ic_baseline_share_24"
+        style="@style/Widget.AppTheme.ShareCheckBox"
+        tools:text="10" />
 
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/imgbWatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checkable="true"
+        style="@style/Widget.AppTheme.WatchCheckBox"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbShare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgbShare"
+        tools:text="10"
+        app:icon="@drawable/ic_baseline_remove_red_eye_24" />
 
 <!--    <FrameLayout-->
 <!--        android:id="@+id/videoLayout"-->
