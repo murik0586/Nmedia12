@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">NMedia</string>
+    <string name="hello_text">NMedia!</string>
+    <string name="author">Netology. University of Internet Professions of the Future</string>
+    <string name="content">Hello, this is the new Netology! Once upon a time, Netology began with online marketing intensives. Then there were courses in design, development, analytics and management. We grow ourselves and help students grow: from beginners to confident professionals. But the most important thing remains with us: we believe that everyone already has a force that makes you want more, aim higher, run faster. Our mission is to help get on the path of growth and start a chain of change → http://netolo.gy/fyb</string>
+    <string name="post_date">21 May 2021, 15:36</string>
+    <string name="likes" translatable="false">"10"</string>
+    <string name="shared" translatable="false">"10"</string>
+    <string name="watched" translatable="false">"10"</string>
+    <string name="post_text">Post text</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_remove">Remove</string>
+    <string name="error_empty_content">Post can\'t be empty</string>
+    <string name="edit_action">Edit post</string>
+    <string name="chooser_share_post">Share post</string>
+    <string name="channel_like_name" translatable="false">Like notifications</string>
+    <string name="channel_newPost_name" translatable="false">New post notifications</string>
+    <string name="channel_like_description" translatable="false">Notifications like</string>
+    <string name="channel_new_post_description" translatable="false">Notifications new post</string>
+    <string name="notification_user_liked" translatable="false">User %1$s liked %2$s\'s post</string>
+    <string name="notification_user_new_post" translatable="false">User %1$s create new post</string>
+    <string name="empty_posts">no posts</string>
+    <string name="retry_loading">Retry</string>
+    <string name="error_loading">try again later</string>
+</resources>
