@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/common_spacing">
+
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/posts_avatar_size"
+        android:layout_height="@dimen/posts_avatar_size"
+        android:layout_marginBottom="@dimen/common_spacing"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_netology" />
+
+    <TextView
+        android:id="@+id/author"
+        app:layout_constraintBottom_toTopOf="@+id/published"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/menu"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:ellipsize="end"
+        android:singleLine="true"
+        tools:text="@sample/posts.json/data/author" />
+
+    <TextView
+        android:id="@+id/published"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintEnd_toStartOf="@id/menu"
+        app:layout_constraintTop_toBottomOf="@+id/author"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:layout_marginBottom="@dimen/common_spacing"
+        tools:text="@sample/posts.json/data/published" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_spacing"
+        android:background="@android:color/transparent"
+        style="@style/Widget.AppTheme.Menu"
+        app:icon="@drawable/ic_baseline_more_vert_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="avatar,published,author"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/common_spacing"
+        android:paddingTop="@dimen/common_spacing"
+        tools:text="@sample/posts.json/data/content" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/videoTools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="content"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/likeShareButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="videoTools"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/imgbLiked"
+        style="@style/Widget.AppTheme.LikeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checkable="true"
+        app:icon="@drawable/ic_like_selector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/likeShareButtons"
+        tools:text="@sample/posts.json/data/likes" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/imgbShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checkable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbLiked"
+        app:layout_constraintStart_toEndOf="@+id/imgbLiked"
+        app:layout_constraintTop_toBottomOf="@+id/likeShareButtons"
+        app:icon="@drawable/ic_baseline_share_24"
+        style="@style/Widget.AppTheme.ShareCheckBox"
+        tools:text="10" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/imgbWatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checkable="true"
+        style="@style/Widget.AppTheme.WatchCheckBox"
+        app:layout_constraintBottom_toBottomOf="@+id/imgbShare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgbShare"
+        tools:text="10"
+        app:icon="@drawable/ic_baseline_remove_red_eye_24" />
+
+    <FrameLayout
+        android:id="@+id/videoLayout"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toTopOf="@id/likeShareButtons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoTools"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"/>
+
+        <ImageView
+            android:id="@+id/videoImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_play_arrow_24"
+            app:tint="@color/colorAccent"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

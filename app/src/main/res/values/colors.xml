@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00cb97</color>
+    <color name="colorPrimaryDark">#009969</color>
+    <color name="colorAccent">#ccafbc</color>
+    <color name="commonNotEnable">#949494</color>
+    <color name="liked">#ff0000</color>
+    <color name="shared">#131111</color>
+    <color name="watched">@color/commonNotEnable</color>
+    <color name="menu">@color/commonNotEnable</color>
+</resources>
