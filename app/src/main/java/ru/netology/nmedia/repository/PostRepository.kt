@@ -7,13 +7,11 @@ import java.lang.Exception
 
 interface PostRepository {
     fun getAllAsync(callback: GetAllCallback)
-    fun getById(id : Long) : Post
-    fun likeById(id : Long) :Post
-    fun unlikeById(id : Long) :Post
-    fun shareById(id : Long)
-    fun watchById(id : Long)
-    fun save(post : Post, callback: SaveCallback)
-    fun removeById(id: Long)
+    fun getByIdAsync(id : Long, callback: GetByIdCallback)
+    fun likeByIdAsync(id : Long, callback: LikeCallback)
+    fun unlikeByIdAsync(id : Long, callback: UnlikeCallback)
+    fun saveAsync(post : Post, callback: SaveCallback)
+    fun removeByIdAsync(id: Long, callback: RemoveByIdCallback)
 
     interface GetAllCallback {
         fun onError(e : Exception)
@@ -21,6 +19,26 @@ interface PostRepository {
     }
 
     interface SaveCallback {
+        fun onError(e : Exception)
+        fun onSuccess(post: Post)
+    }
+
+    interface LikeCallback {
+        fun onError(e : Exception)
+        fun onSuccess(post: Post)
+    }
+
+    interface UnlikeCallback {
+        fun onError(e : Exception)
+        fun onSuccess(post: Post)
+    }
+
+    interface GetByIdCallback {
+        fun onError(e : Exception)
+        fun onSuccess(post: Post)
+    }
+
+    interface RemoveByIdCallback {
         fun onError(e : Exception)
         fun onSuccess()
     }

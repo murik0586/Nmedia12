@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.MediaController
 import android.widget.PopupMenu
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -17,11 +18,9 @@ import ru.netology.nmedia.dto.WallService
 
 interface OnInteractionListener {
     fun onLike(post: Post) {}
-    fun onShare(post: Post) {}
-    fun onWatch(post: Post) {}
     fun onEdit(post: Post) {}
+    fun onShare(post: Post) {}
     fun onRemove(post: Post) {}
-    fun onPlayVideo(post: Post) {}
 }
 
 class PostAdapter (
@@ -47,6 +46,7 @@ class PostViewHolder(
         binding.apply {
             author.text = post.author
             published.text = post.published
+            avatar.setImageURI(post.authorAvatar.toUri())
             content.text = post.content
             imgbLiked.text = WallService.displayCount(post.likes)
             imgbLiked.isChecked = post.likedByMe
@@ -57,6 +57,10 @@ class PostViewHolder(
                 imgbLiked.setOnClickListener {
                     onInteractionListener.onLike(post)
                 }
+
+            imgbShare.setOnClickListener {
+                onInteractionListener.onShare(post)
+            }
 
 
 
